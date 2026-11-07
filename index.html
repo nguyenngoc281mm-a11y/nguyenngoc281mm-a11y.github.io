@@ -83,9 +83,14 @@
     .feature-copy p{color:var(--muted)}
     .tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
     .tag{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.07);color:#dce0ec;font-size:.77rem}
-    .detail-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
-    .detail-card{padding:19px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}
-    .detail-card .emoji{font-size:1.6rem}.detail-card h3{font-size:1.02rem;margin:10px 0 6px}.detail-card p{font-size:.83rem;color:var(--muted);margin:0}
+    .detail-grid{display:grid;grid-template-columns:1fr;gap:22px}
+    .detail-card{display:grid;grid-template-columns:minmax(220px, .78fr) 1.22fr;gap:0;overflow:hidden;min-height:300px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(120deg,rgba(167,139,250,.07),rgba(255,107,157,.035)),var(--panel);scroll-margin-top:100px}
+    .detail-card:nth-child(even) .detail-image{order:2}
+    .detail-image{width:100%;height:100%;min-height:300px;object-fit:cover}
+    .detail-copy{padding:28px 30px;align-self:center}
+    .detail-card .emoji{font-size:1.8rem}.detail-card h3{font-size:1.45rem;margin:8px 0 10px}.detail-card p{font-size:.9rem;color:var(--muted);margin:0;max-width:650px}
+    .detail-points{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:17px}
+    .detail-point{padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.035);font-size:.8rem;color:#dce0ec}
     .detail-card[hidden]{display:none}
 
     .resource-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
@@ -98,9 +103,9 @@
     .footer{padding:34px 0 45px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
     .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     .footer strong{color:var(--text)}
-    @media(max-width:1000px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.detail-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{gap:20px}.hero-art{min-height:320px}.hero-photo{height:300px}}
-    @media(max-width:720px){.wrap{width:min(100% - 30px,var(--max))}.nav{min-height:66px}.menu-toggle{display:inline-flex}.nav-links{display:none;position:absolute;left:15px;right:15px;top:66px;padding:16px;background:var(--panel);border:1px solid var(--line);border-radius:16px;flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:11px 8px}.hero{grid-template-columns:1fr;padding:54px 0 35px}.hero-art{min-height:270px}.hero-photo{height:260px;width:min(88%,420px)}.floating-note{left:3%;bottom:8px}.section{padding:38px 0}.section-head{align-items:stretch;flex-direction:column}.search-wrap{width:100%}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.category-card{min-height:290px}.detail-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.feature-band{grid-template-columns:1fr;padding:15px}.feature-band img{height:210px}.newsletter{align-items:flex-start;flex-direction:column}}
-    @media(max-width:420px){.cards{grid-template-columns:1fr}.category-card{min-height:330px}.detail-grid{grid-template-columns:1fr 1fr}.brand{font-size:.94rem}.lang-pill{padding:8px 10px}}
+    @media(max-width:1000px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.detail-card{grid-template-columns:minmax(190px,.7fr) 1.3fr}.detail-copy{padding:22px}.detail-points{grid-template-columns:1fr 1fr}.hero{gap:20px}.hero-art{min-height:320px}.hero-photo{height:300px}}
+    @media(max-width:720px){.wrap{width:min(100% - 30px,var(--max))}.nav{min-height:66px}.menu-toggle{display:inline-flex}.nav-links{display:none;position:absolute;left:15px;right:15px;top:66px;padding:16px;background:var(--panel);border:1px solid var(--line);border-radius:16px;flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:11px 8px}.hero{grid-template-columns:1fr;padding:54px 0 35px}.hero-art{min-height:270px}.hero-photo{height:260px;width:min(88%,420px)}.floating-note{left:3%;bottom:8px}.section{padding:38px 0}.section-head{align-items:stretch;flex-direction:column}.search-wrap{width:100%}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.category-card{min-height:290px}.detail-grid{gap:16px}.detail-card{grid-template-columns:1fr}.detail-card:nth-child(even) .detail-image{order:0}.detail-image{height:210px;min-height:210px}.detail-copy{padding:20px}.detail-points{grid-template-columns:1fr 1fr}.feature-band{grid-template-columns:1fr;padding:15px}.feature-band img{height:210px}.newsletter{align-items:flex-start;flex-direction:column}}
+    @media(max-width:420px){.cards{grid-template-columns:1fr}.category-card{min-height:330px}.detail-points{grid-template-columns:1fr}.brand{font-size:.94rem}.lang-pill{padding:8px 10px}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
   </style>
 </head>
@@ -183,11 +188,46 @@
       <div class="section-head"><div><div class="section-kicker">Find your next favorite</div><h2 id="about-title">다섯 가지 취향 가이드</h2><p class="section-desc">각 분야에서 무엇을 만나볼 수 있는지 간단히 살펴보세요.</p></div></div>
       <p class="section-desc" style="margin-bottom:18px">카테고리 카드에서 이동한 뒤, 아래 공식 사이트 링크를 눌러 실제 게임·음악·만화·영화·레시피를 만나보세요. 링크는 새 탭에서 열립니다.</p>
       <div class="detail-grid">
-        <article class="detail-card" id="game-details"><div class="emoji" aria-hidden="true">🎮</div><h3>Game · 게임</h3><p>PC, 콘솔, 모바일 게임을 장르별로 탐색하고 협동·전략·어드벤처 등 나에게 맞는 플레이 스타일을 찾아보세요.</p><div class="resource-links" aria-label="게임 사이트 바로가기"><a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer">Steam 게임 스토어 ↗</a><a href="https://store.epicgames.com/" target="_blank" rel="noopener noreferrer">Epic Games Store ↗</a></div></article>
-        <article class="detail-card" id="music-details"><div class="emoji" aria-hidden="true">🎧</div><h3>Music · 음악</h3><p>K-pop, 팝, 인디, 힙합과 OST까지. 아티스트와 장르를 발견하고 공부·휴식·운동에 어울리는 플레이리스트를 만들어 보세요.</p><div class="resource-links" aria-label="음악 사이트 바로가기"><a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer">Spotify 듣기 ↗</a><a href="https://music.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube Music 듣기 ↗</a></div></article>
-        <article class="detail-card" id="manga-details"><div class="emoji" aria-hidden="true">📚</div><h3>Manga · 만화</h3><p>액션, 판타지, 로맨스, 일상, 스릴러 장르의 만화와 웹툰을 살펴보고 인상 깊은 작화와 스토리를 찾아보세요.</p><div class="resource-links" aria-label="만화 사이트 바로가기"><a href="https://www.webtoons.com/en/" target="_blank" rel="noopener noreferrer">WEBTOON 작품 보기 ↗</a><a href="https://mangaplus.shueisha.co.jp/" target="_blank" rel="noopener noreferrer">MANGA Plus 읽기 ↗</a><a href="https://www.tappytoon.com/en/comics/discover" target="_blank" rel="noopener noreferrer">Tappytoon 만화 보기 ↗</a></div></article>
-        <article class="detail-card" id="movie-details"><div class="emoji" aria-hidden="true">🎬</div><h3>Korean Movies · 한국 영화</h3><p>로맨스, 코미디, 범죄, 스릴러, 드라마 등 다양한 한국 영화와 감독·배우·촬영 장소에 관한 이야기를 만나보세요.</p><div class="resource-links" aria-label="한국 영화 사이트 바로가기"><a href="https://www.netflix.com/browse/genre/5685" target="_blank" rel="noopener noreferrer">Netflix 한국 영화 ↗</a><a href="https://www.kmdb.or.kr/vod" target="_blank" rel="noopener noreferrer">한국영상자료원 KMDb VOD ↗</a><a href="https://vkobis.or.kr/onlineTheater/selectOnlineTheaterList.do" target="_blank" rel="noopener noreferrer">합법 온라인 상영관 안내 ↗</a></div></article>
-        <article class="detail-card" id="food-details"><div class="emoji" aria-hidden="true">🍜</div><h3>Vietnamese Food · 베트남 음식</h3><p>쌀국수(Phở), 반미(Bánh mì), 분짜(Bún chả), 고이꾸온(Gỏi cuốn) 등 지역별 재료와 음식 문화를 알아보세요.</p><div class="resource-links" aria-label="베트남 음식 사이트 바로가기"><a href="https://vietnam.travel/things-to-do/vietnamese-home-recipes/" target="_blank" rel="noopener noreferrer">베트남 공식 레시피 ↗</a><a href="https://vietnam.travel/things-to-do/21-must-try-vietnamese-dishes/" target="_blank" rel="noopener noreferrer">베트남 대표 음식 21가지 ↗</a></div></article>
+        <article class="detail-card" id="game-details">
+          <img class="detail-image" src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=85" alt="게임 대회 현장에서 모니터와 컴퓨터로 게임을 즐기는 사람들" loading="lazy">
+          <div class="detail-copy"><div class="emoji" aria-hidden="true">🎮</div><h3>Game · 게임 세계</h3>
+            <p>게임은 단순한 놀이를 넘어 이야기와 전략, 사람을 연결하는 문화입니다. PC·콘솔·모바일에서 취향에 맞는 작품을 찾고, 혼자 즐기는 어드벤처부터 친구와 함께하는 협동 게임까지 탐험해 보세요.</p>
+            <div class="detail-points"><div class="detail-point">⚔️ 액션·어드벤처</div><div class="detail-point">🧩 퍼즐·전략·시뮬레이션</div><div class="detail-point">🤝 협동·멀티플레이</div><div class="detail-point">🎲 인디·캐주얼 게임</div></div>
+            <div class="resource-links" aria-label="게임 사이트 바로가기"><a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer">Steam 게임 스토어 ↗</a><a href="https://store.epicgames.com/" target="_blank" rel="noopener noreferrer">Epic Games Store ↗</a></div>
+          </div>
+        </article>
+        <article class="detail-card" id="music-details">
+          <img class="detail-image" src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1000&q=85" alt="마이크를 들고 관객 앞에서 공연하는 가수" loading="lazy">
+          <div class="detail-copy"><div class="emoji" aria-hidden="true">🎧</div><h3>Music · 음악의 발견</h3>
+            <p>기분에 따라 음악을 골라 보세요. K-pop과 한국 드라마 OST, 베트남 음악, 팝·인디·힙합까지 다양한 장르를 듣고 좋아하는 아티스트의 새 앨범과 라이브 공연도 찾아볼 수 있습니다.</p>
+            <div class="detail-points"><div class="detail-point">🎤 K-pop·V-pop</div><div class="detail-point">🎸 인디·록·팝</div><div class="detail-point">🎼 영화·드라마 OST</div><div class="detail-point">🌙 휴식·집중 플레이리스트</div></div>
+            <div class="resource-links" aria-label="음악 사이트 바로가기"><a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer">Spotify 듣기 ↗</a><a href="https://music.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube Music 듣기 ↗</a></div>
+          </div>
+        </article>
+        <article class="detail-card" id="manga-details">
+          <img class="detail-image" src="https://images.unsplash.com/photo-1612036782180-6f0b6cd846fe?auto=format&fit=crop&w=1000&q=85" alt="만화와 그래픽 노블을 읽을 수 있는 책과 일러스트" loading="lazy">
+          <div class="detail-copy"><div class="emoji" aria-hidden="true">📚</div><h3>Manga · 만화와 웹툰</h3>
+            <p>한 장면의 그림과 한 줄의 대사로 시작되는 새로운 세계. 일본 만화(Manga), 한국 웹툰(Manhwa), 그래픽 노블을 장르별로 살펴보고 공식 플랫폼에서 작품을 읽어 보세요.</p>
+            <div class="detail-points"><div class="detail-point">✨ 판타지·액션·모험</div><div class="detail-point">💗 로맨스·일상</div><div class="detail-point">🕵️ 미스터리·스릴러</div><div class="detail-point">🎨 작화·작가 이야기</div></div>
+            <div class="resource-links" aria-label="만화 사이트 바로가기"><a href="https://www.webtoons.com/en/" target="_blank" rel="noopener noreferrer">WEBTOON 작품 보기 ↗</a><a href="https://mangaplus.shueisha.co.jp/" target="_blank" rel="noopener noreferrer">MANGA Plus 읽기 ↗</a><a href="https://www.tappytoon.com/en/comics/discover" target="_blank" rel="noopener noreferrer">Tappytoon 만화 보기 ↗</a></div>
+          </div>
+        </article>
+        <article class="detail-card" id="movie-details">
+          <img class="detail-image" src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1000&q=85" alt="큰 스크린과 좌석이 있는 영화관 내부" loading="lazy">
+          <div class="detail-copy"><div class="emoji" aria-hidden="true">🎬</div><h3>Korean Movies · 한국 영화</h3>
+            <p>한국 영화의 매력은 다양한 장르와 섬세한 감정 표현에 있습니다. 최신 작품부터 오래 기억되는 명작까지 살펴보고, 취향에 맞는 영화와 감독·배우의 작품 세계를 찾아보세요.</p>
+            <div class="detail-points"><div class="detail-point">💕 로맨스·멜로·코미디</div><div class="detail-point">🔍 범죄·스릴러·미스터리</div><div class="detail-point">🎭 드라마·휴먼 스토리</div><div class="detail-point">🏆 영화제·명작·독립영화</div></div>
+            <div class="resource-links" aria-label="한국 영화 사이트 바로가기"><a href="https://www.netflix.com/browse/genre/5685" target="_blank" rel="noopener noreferrer">Netflix 한국 영화 ↗</a><a href="https://www.kmdb.or.kr/vod" target="_blank" rel="noopener noreferrer">한국영상자료원 KMDb VOD ↗</a><a href="https://vkobis.or.kr/onlineTheater/selectOnlineTheaterList.do" target="_blank" rel="noopener noreferrer">합법 온라인 상영관 안내 ↗</a></div>
+          </div>
+        </article>
+        <article class="detail-card" id="food-details">
+          <img class="detail-image" src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1000&q=85" alt="신선한 채소와 고기를 곁들인 베트남 음식 한 상" loading="lazy">
+          <div class="detail-copy"><div class="emoji" aria-hidden="true">🍜</div><h3>Vietnamese Food · 베트남 음식</h3>
+            <p>베트남 음식은 신선한 허브와 채소, 풍부한 향신료, 균형 잡힌 맛이 특징입니다. 북부·중부·남부 지역의 음식 차이를 알아보고 집에서도 따라 할 수 있는 레시피를 찾아보세요.</p>
+            <div class="detail-points"><div class="detail-point">🍲 Phở · 쌀국수</div><div class="detail-point">🥖 Bánh mì · 반미</div><div class="detail-point">🥗 Gỏi cuốn · 월남쌈</div><div class="detail-point">🍜 Bún chả · 분짜</div></div>
+            <div class="resource-links" aria-label="베트남 음식 사이트 바로가기"><a href="https://vietnam.travel/things-to-do/vietnamese-home-recipes/" target="_blank" rel="noopener noreferrer">베트남 공식 레시피 ↗</a><a href="https://vietnam.travel/things-to-do/21-must-try-vietnamese-dishes/" target="_blank" rel="noopener noreferrer">베트남 대표 음식 21가지 ↗</a></div>
+          </div>
+        </article>
       </div>
       <p class="resource-note">※ 일부 콘텐츠는 국가·지역, 회원 가입 또는 유료 구독 여부에 따라 이용할 수 있습니다. / Một số nội dung có thể yêu cầu tài khoản, trả phí hoặc bị giới hạn theo khu vực.</p>
     </section>
