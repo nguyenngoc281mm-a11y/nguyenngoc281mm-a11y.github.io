@@ -87,6 +87,12 @@
     .detail-card{padding:19px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}
     .detail-card .emoji{font-size:1.6rem}.detail-card h3{font-size:1.02rem;margin:10px 0 6px}.detail-card p{font-size:.83rem;color:var(--muted);margin:0}
     .detail-card[hidden]{display:none}
+
+    .resource-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+    .resource-links a{display:inline-flex;align-items:center;gap:6px;padding:8px 11px;border:1px solid rgba(103,217,232,.28);border-radius:10px;background:rgba(103,217,232,.08);color:#dffaff;font-size:.78rem;font-weight:700;line-height:1.35;transition:background .2s,border-color .2s}
+    .resource-links a:hover{background:rgba(103,217,232,.18);border-color:var(--cyan);color:#fff}
+    .resource-links a:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+    .resource-note{font-size:.75rem;color:var(--muted);margin:12px 0 0}
     .newsletter{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:30px;border-radius:24px;background:linear-gradient(110deg,#292343,#1c3340);border:1px solid var(--line)}
     .newsletter h2{font-size:1.7rem}.newsletter p{color:#c1c8d8;margin:6px 0 0}
     .footer{padding:34px 0 45px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
@@ -175,13 +181,15 @@
 
     <section class="section wrap" id="about" aria-labelledby="about-title">
       <div class="section-head"><div><div class="section-kicker">Find your next favorite</div><h2 id="about-title">다섯 가지 취향 가이드</h2><p class="section-desc">각 분야에서 무엇을 만나볼 수 있는지 간단히 살펴보세요.</p></div></div>
+      <p class="section-desc" style="margin-bottom:18px">카테고리 카드에서 이동한 뒤, 아래 공식 사이트 링크를 눌러 실제 게임·음악·만화·영화·레시피를 만나보세요. 링크는 새 탭에서 열립니다.</p>
       <div class="detail-grid">
-        <article class="detail-card" id="game-details"><div class="emoji" aria-hidden="true">🎮</div><h3>Game · 게임</h3><p>PC, 콘솔, 모바일 게임을 장르별로 탐색하고 협동·전략·어드벤처 등 나에게 맞는 플레이 스타일을 찾아보세요.</p></article>
-        <article class="detail-card" id="music-details"><div class="emoji" aria-hidden="true">🎧</div><h3>Music · 음악</h3><p>K-pop, 팝, 인디, 힙합과 OST까지. 아티스트와 장르를 발견하고 공부·휴식·운동에 어울리는 플레이리스트를 만들어 보세요.</p></article>
-        <article class="detail-card" id="manga-details"><div class="emoji" aria-hidden="true">📚</div><h3>Manga · 만화</h3><p>액션, 판타지, 로맨스, 일상, 스릴러 장르의 만화와 웹툰을 살펴보고 인상 깊은 작화와 스토리를 찾아보세요.</p></article>
-        <article class="detail-card" id="movie-details"><div class="emoji" aria-hidden="true">🎬</div><h3>Korean Movies · 한국 영화</h3><p>로맨스, 코미디, 범죄, 스릴러, 드라마 등 다양한 한국 영화와 감독·배우·촬영 장소에 관한 이야기를 만나보세요.</p></article>
-        <article class="detail-card" id="food-details"><div class="emoji" aria-hidden="true">🍜</div><h3>Vietnamese Food · 베트남 음식</h3><p>쌀국수(Phở), 반미(Bánh mì), 분짜(Bún chả), 고이꾸온(Gỏi cuốn) 등 지역별 재료와 음식 문화를 알아보세요.</p></article>
+        <article class="detail-card" id="game-details"><div class="emoji" aria-hidden="true">🎮</div><h3>Game · 게임</h3><p>PC, 콘솔, 모바일 게임을 장르별로 탐색하고 협동·전략·어드벤처 등 나에게 맞는 플레이 스타일을 찾아보세요.</p><div class="resource-links" aria-label="게임 사이트 바로가기"><a href="https://store.steampowered.com/" target="_blank" rel="noopener noreferrer">Steam 게임 스토어 ↗</a><a href="https://store.epicgames.com/" target="_blank" rel="noopener noreferrer">Epic Games Store ↗</a></div></article>
+        <article class="detail-card" id="music-details"><div class="emoji" aria-hidden="true">🎧</div><h3>Music · 음악</h3><p>K-pop, 팝, 인디, 힙합과 OST까지. 아티스트와 장르를 발견하고 공부·휴식·운동에 어울리는 플레이리스트를 만들어 보세요.</p><div class="resource-links" aria-label="음악 사이트 바로가기"><a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer">Spotify 듣기 ↗</a><a href="https://music.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube Music 듣기 ↗</a></div></article>
+        <article class="detail-card" id="manga-details"><div class="emoji" aria-hidden="true">📚</div><h3>Manga · 만화</h3><p>액션, 판타지, 로맨스, 일상, 스릴러 장르의 만화와 웹툰을 살펴보고 인상 깊은 작화와 스토리를 찾아보세요.</p><div class="resource-links" aria-label="만화 사이트 바로가기"><a href="https://www.webtoons.com/en/" target="_blank" rel="noopener noreferrer">WEBTOON 작품 보기 ↗</a><a href="https://mangaplus.shueisha.co.jp/" target="_blank" rel="noopener noreferrer">MANGA Plus 읽기 ↗</a><a href="https://www.tappytoon.com/en/comics/discover" target="_blank" rel="noopener noreferrer">Tappytoon 만화 보기 ↗</a></div></article>
+        <article class="detail-card" id="movie-details"><div class="emoji" aria-hidden="true">🎬</div><h3>Korean Movies · 한국 영화</h3><p>로맨스, 코미디, 범죄, 스릴러, 드라마 등 다양한 한국 영화와 감독·배우·촬영 장소에 관한 이야기를 만나보세요.</p><div class="resource-links" aria-label="한국 영화 사이트 바로가기"><a href="https://www.netflix.com/browse/genre/5685" target="_blank" rel="noopener noreferrer">Netflix 한국 영화 ↗</a><a href="https://www.kmdb.or.kr/vod" target="_blank" rel="noopener noreferrer">한국영상자료원 KMDb VOD ↗</a><a href="https://vkobis.or.kr/onlineTheater/selectOnlineTheaterList.do" target="_blank" rel="noopener noreferrer">합법 온라인 상영관 안내 ↗</a></div></article>
+        <article class="detail-card" id="food-details"><div class="emoji" aria-hidden="true">🍜</div><h3>Vietnamese Food · 베트남 음식</h3><p>쌀국수(Phở), 반미(Bánh mì), 분짜(Bún chả), 고이꾸온(Gỏi cuốn) 등 지역별 재료와 음식 문화를 알아보세요.</p><div class="resource-links" aria-label="베트남 음식 사이트 바로가기"><a href="https://vietnam.travel/things-to-do/vietnamese-home-recipes/" target="_blank" rel="noopener noreferrer">베트남 공식 레시피 ↗</a><a href="https://vietnam.travel/things-to-do/21-must-try-vietnamese-dishes/" target="_blank" rel="noopener noreferrer">베트남 대표 음식 21가지 ↗</a></div></article>
       </div>
+      <p class="resource-note">※ 일부 콘텐츠는 국가·지역, 회원 가입 또는 유료 구독 여부에 따라 이용할 수 있습니다. / Một số nội dung có thể yêu cầu tài khoản, trả phí hoặc bị giới hạn theo khu vực.</p>
     </section>
 
     <section class="section wrap" aria-label="마무리 안내">
