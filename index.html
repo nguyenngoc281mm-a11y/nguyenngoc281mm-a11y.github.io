@@ -50,6 +50,11 @@
     .stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:34px}
     .stat strong{display:block;font-size:1.35rem}.stat span{color:var(--muted);font-size:.78rem}
 .video-heading{align-items:flex-start;flex-direction:column}.video-section{padding:8px 0 32px}}
+    .video-section{padding:8px 0 42px}
+    .video-panel{overflow:hidden;border:1px solid var(--line);border-radius:26px;background:var(--panel);box-shadow:0 22px 60px rgba(0,0,0,.28)}
+    .video-panel video{display:block;width:100%;max-height:680px;aspect-ratio:16/9;background:#050711;object-fit:contain}
+    .video-caption{padding:17px 20px;color:var(--muted);font-size:.9rem}
+    .video-caption strong{display:block;color:var(--text);font-size:1.05rem;margin-bottom:4px}
     .section{padding:48px 0 58px}
     .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:25px}
     .section-kicker{color:var(--pink);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
@@ -144,6 +149,20 @@
       <div class="hero-art">
         <img class="hero-photo" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1100&q=85" alt="네온 조명이 비치는 게임 컨트롤러와 게임 공간">
         <div class="floating-note"><strong>오늘의 취향 탐험 ✨</strong>Play · Listen · Read · Watch · Taste</div>
+      </div>
+    </section>
+
+
+    <section class="section wrap video-section" id="featured-video" aria-labelledby="video-title">
+      <div class="section-head video-heading">
+        <div><div class="section-kicker">Featured video</div><h2 id="video-title">🎬 함께 보는 영상</h2><p class="section-desc">PLAYGROUND에서 준비한 영상을 이곳에서 바로 감상할 수 있습니다.</p></div>
+      </div>
+      <div class="video-panel">
+        <video controls playsinline preload="metadata" aria-label="PLAYGROUND 메인 영상">
+          <source src="assets/vd.mp4" type="video/mp4">
+          브라우저가 동영상 재생을 지원하지 않습니다.
+        </video>
+        <div class="video-caption"><strong>PLAYGROUND · Featured video</strong>재생 버튼을 눌러 영상을 시청해 보세요.</div>
       </div>
     </section>
 
