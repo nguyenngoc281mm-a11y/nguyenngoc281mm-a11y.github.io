@@ -99,6 +99,16 @@
     .detail-point{padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.035);font-size:.8rem;color:#dce0ec}
     .detail-card[hidden]{display:none}
 
+    .suno-player-list{margin:22px 0 18px;padding:18px;border:1px solid rgba(103,217,232,.24);border-radius:18px;background:rgba(103,217,232,.045)}
+    .suno-player-heading{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+    .suno-player-heading strong{color:var(--cyan);font-size:.95rem}
+    .suno-player-heading span,.suno-player-note{color:var(--muted);font-size:.76rem}
+    .suno-player-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .suno-track{min-width:0;padding:12px;border:1px solid var(--line);border-radius:14px;background:rgba(9,12,24,.42)}
+    .suno-track-title{font-size:.84rem;font-weight:800;margin-bottom:9px}
+    .suno-track iframe{display:block;width:100%;height:190px;border:0;border-radius:10px;background:#101322}
+    .suno-track>a{display:inline-block;margin-top:8px;color:var(--cyan);font-size:.76rem;font-weight:700}
+    .suno-player-note{margin:12px 0 0}
     .resource-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
     .resource-links a{display:inline-flex;align-items:center;gap:6px;padding:8px 11px;border:1px solid rgba(103,217,232,.28);border-radius:10px;background:rgba(103,217,232,.08);color:#dffaff;font-size:.78rem;font-weight:700;line-height:1.35;transition:background .2s,border-color .2s}
     .resource-links a:hover{background:rgba(103,217,232,.18);border-color:var(--cyan);color:#fff}
@@ -116,7 +126,7 @@
     .footer{padding:34px 0 45px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}
     .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     .footer strong{color:var(--text)}
-    @media(max-width:1000px){.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.detail-card{grid-template-columns:minmax(190px,.7fr) 1.3fr}.detail-copy{padding:22px}.detail-points{grid-template-columns:1fr 1fr}.hero{gap:20px}.hero-art{min-height:320px}.hero-photo{height:300px}}
+    @media(max-width:1000px){.suno-player-grid{grid-template-columns:1fr}.suno-track iframe{height:190px}.cards{grid-template-columns:repeat(3,minmax(0,1fr))}.detail-card{grid-template-columns:minmax(190px,.7fr) 1.3fr}.detail-copy{padding:22px}.detail-points{grid-template-columns:1fr 1fr}.hero{gap:20px}.hero-art{min-height:320px}.hero-photo{height:300px}}
     @media(max-width:720px){.photo-tile img{height:95px}.wrap{width:min(100% - 30px,var(--max))}.nav{min-height:66px}.menu-toggle{display:inline-flex}.nav-links{display:none;position:absolute;left:15px;right:15px;top:66px;padding:16px;background:var(--panel);border:1px solid var(--line);border-radius:16px;flex-direction:column;align-items:stretch;gap:0}.nav-links.open{display:flex}.nav-links a{padding:11px 8px}.hero{grid-template-columns:1fr;padding:54px 0 35px}.hero-art{min-height:270px}.hero-photo{height:260px;width:min(88%,420px)}.floating-note{left:3%;bottom:8px}.section{padding:38px 0}.section-head{align-items:stretch;flex-direction:column}.search-wrap{width:100%}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.category-card{min-height:290px}.detail-grid{gap:16px}.detail-card{grid-template-columns:1fr}.detail-card:nth-child(even) .detail-image{order:0}.detail-image{height:210px;min-height:210px}.detail-copy{padding:20px}.detail-points{grid-template-columns:1fr 1fr}.feature-band{grid-template-columns:1fr;padding:15px}.feature-band img{height:210px}.newsletter{align-items:flex-start;flex-direction:column}}
     @media(max-width:420px){.photo-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.photo-tile img{height:105px}.cards{grid-template-columns:1fr}.category-card{min-height:330px}.detail-points{grid-template-columns:1fr}.brand{font-size:.94rem}.lang-pill{padding:8px 10px}}
     @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
@@ -232,6 +242,15 @@
           <img class="detail-image" src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1000&q=85" alt="마이크를 들고 관객 앞에서 공연하는 가수" loading="lazy">
           <div class="detail-copy"><div class="emoji" aria-hidden="true">🎧</div><h3>Music · 음악의 발견</h3>
             <p>기분에 따라 음악을 골라 보세요. K-pop과 한국 드라마 OST, 베트남 음악, 팝·인디·힙합까지 다양한 장르를 듣고 좋아하는 아티스트의 새 앨범과 라이브 공연도 찾아볼 수 있습니다.</p>
+            <div class="suno-player-list" aria-label="Suno에서 만든 내 음악">
+              <div class="suno-player-heading"><strong>🎵 My Suno Songs · 내가 만든 노래</strong><span>페이지에서 바로 들어 보세요</span></div>
+              <div class="suno-player-grid">
+                <article class="suno-track"><div class="suno-track-title">Track 01</div><iframe title="Suno 노래 1 재생" src="https://suno.com/embed/Mdj9yNCRoyOs3QsW" loading="lazy" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe><a href="https://suno.com/s/Mdj9yNCRoyOs3QsW" target="_blank" rel="noopener noreferrer">Suno에서 열기 ↗</a></article>
+                <article class="suno-track"><div class="suno-track-title">Track 02</div><iframe title="Suno 노래 2 재생" src="https://suno.com/embed/BSweJ22ni3PRVzmy" loading="lazy" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe><a href="https://suno.com/s/BSweJ22ni3PRVzmy" target="_blank" rel="noopener noreferrer">Suno에서 열기 ↗</a></article>
+                <article class="suno-track"><div class="suno-track-title">Track 03</div><iframe title="Suno 노래 3 재생" src="https://suno.com/embed/EuQeBMWTLU2sB5Tf" loading="lazy" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe><a href="https://suno.com/s/EuQeBMWTLU2sB5Tf" target="_blank" rel="noopener noreferrer">Suno에서 열기 ↗</a></article>
+              </div>
+              <p class="suno-player-note">※ 음악은 Suno에서 제공하는 플레이어로 재생됩니다. 플레이어가 표시되지 않으면 ‘Suno에서 열기’를 눌러 주세요.</p>
+            </div>
             <div class="resource-links" aria-label="내가 만든 음악 페이지"><a href="music/">🎵 내가 만든 음악 듣기 / My Music ↗</a></div>
             <div class="detail-points"><div class="detail-point">🎤 K-pop·V-pop</div><div class="detail-point">🎸 인디·록·팝</div><div class="detail-point">🎼 영화·드라마 OST</div><div class="detail-point">🌙 휴식·집중 플레이리스트</div></div>
             <div class="resource-links" aria-label="음악 사이트 바로가기"><a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer">Spotify 듣기 ↗</a><a href="https://music.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube Music 듣기 ↗</a></div>
